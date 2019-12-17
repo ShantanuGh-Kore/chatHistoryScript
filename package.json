@@ -1,0 +1,21 @@
+{
+  "name": "chathistorydumpapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chatHistory.js",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "express": "^4.16.2",
+    "jsonexport": "^2.0.11",
+    "lodash": "^4.17.15",
+    "moment-timezone": "^0.5.14",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
