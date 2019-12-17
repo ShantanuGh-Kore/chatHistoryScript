@@ -7,17 +7,14 @@ var config = require("./config");
 var streamId = config.streamId;
 var environment = config.environment;
 var results = [];
-
 var messageDate;
-
 //new variables
 var setLimit = 100;
-var count = 0;
 var d = new Date();
 var fileName = "report" + d.getDate() + "_" + (d.getMonth() + 1) + "_" + d.getFullYear() + "_" + d.getHours() + "_" + d.getMinutes();
 fileName += ".csv";
 var t0 = new Date().getTime();
-var userCount = 0;
+
 
 //just some fancy colours
 var colours = ["\x1b[36m%s\x1b[0m", "\x1b[35m%s\x1b[0m", "\x1b[32m%s\x1b[0m", "\x1b[45m%s\x1b[0m", "\x1b[0m"];
@@ -34,10 +31,10 @@ var body = {
     "dateTo": toDate,
     "limit": setLimit
 };
-
-var usersData;
+console.log("\n\n" + colours[0], "Initiating the conversation history download...\n\n");
+console.log(colours[0], "The output will be written to " + fileName + "  \n\n");
 var jsonexport = require('jsonexport');
-function getChatHistory() {
+/*function getChatHistory() {
 
     console.log("\n\n" + colours[0], "Initiating the conversation history download...\n\n");
 
@@ -50,25 +47,22 @@ function getChatHistory() {
         body: body,
         json: true
     };
-
     //Trigger the download process
-
     //Ignore the hardcoded userId.
+    console.log('daattttttttaaaaaaaaaaaaaa',)
     getKoraLogs(12, 0, streamId);
-
-
-}
+}/*
 
 /**
 	Gets recursively called to fetch the conversational history
 
 **/
 
-function getKoraLogs(userId, offset, streamId) {
+function getKoraLogs(offset, streamId) {
     console.log(colours[0], "Retrieving records with offset " + offset + "...\n");
     var options1 = {
         method: 'POST',
-        url: 'https://' + environment + '/api/public/stream/' + streamId + '/getMessages',
+        url: 'https://bots.kore.ai/api/public/stream/' + streamId + '/getMessages',
         body:
         {
             dateFrom: fromDate,
@@ -106,12 +100,14 @@ function getKoraLogs(userId, offset, streamId) {
 
                 if (text) {
                     //count = count + 1;
-                    results.push(obj);
+                    results.push(obj);d
                 }
             }
             if (res.moreAvailable === true) {
                 console.log(colours[0], "\n[" + messageDate + "] More records available..recursively invoking fetch records. Offset= " + " " + offset);
-                getKoraLogs(userId, offset + setLimit, streamId);
+                setTimeout(function(){
+                    getKoraLogs(offset + setLimit, streamId);
+                },1000);
                 if (results.length > 1000) {
                     console.log(colours[0], "[" + messageDate + "] Appending records with offset " + results.length + " to the file");
                     createLogsDumpsFromArray(false);
@@ -124,14 +120,12 @@ function getKoraLogs(userId, offset, streamId) {
         }).catch(function (err) {
             console.log(err, "");
             console.log("\x1b[45m%s\x1b[0m", "Retrying...\n\n");
-            getKoraLogs(userId, offset, streamId)
+            getKoraLogs(offset, streamId)
         });
 
     });
 }
 function showDateInConsoleLog(timestamp) {
-
-
     if (timestamp) {
         timestamp = timezone(timestamp).format('YYYY-MM-DD');
     }
@@ -142,7 +136,6 @@ function showDateInConsoleLog(timestamp) {
         if (messageDate !== timestamp) {
             messageDate = timestamp;
         }
-
     }
 }
 
@@ -169,4 +162,5 @@ function createLogsDumpsFromArray(isLastWrite) {
         });
     });
 }
-getChatHistory();
+//getChatHistory();
+getKoraLogs(0, streamId);
