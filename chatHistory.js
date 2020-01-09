@@ -13,9 +13,9 @@ var d = new Date();
 var fileName = "report" + d.getDate() + "_" + (d.getMonth() + 1) + "_" + d.getFullYear() + "_" + d.getHours() + "_" + d.getMinutes();
 fileName += ".csv";
 var t0 = new Date().getTime();
-
 var fromDate = config.fromDate;
 var toDate = config.toDate;
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 console.log("\n\n" + "Initiating the conversation history download...\n\n");
 console.log("The output will be written to " + fileName + "  \n\n");
