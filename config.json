@@ -2,6 +2,6 @@
   "fromDate": "2019-12-30T00:00:00.000",
   "toDate": "2020-01-06T00:00:00.000",
   "origin": "https://bots.kore.ai",
-  "streamId": "st-41639403-ce32-57fe-be00-fb293af5ebf9",
-  "jwt":"eyJhbGciOiJIUzI1NiJ9.eyJhcHBJZCI6ImNzLWE2M2EzZGRmLTgyOTUtNWM5YS1hZTM2LTk5MjVhM2VjNjVkZSJ9.AQRLyrK_tiMYEItdRnL1PVqpJAp_cChuP1sLfprl8aQ"
+  "streamId": "<Add bot stream id starting with st- from Settings -> Config Settings -> Bot ID>",
+  "jwt":"<generate the jwt for the API scope app and add here. Instructions in Readme>"
 }
