@@ -4,7 +4,8 @@ Script to get the entire chat history dump for a given date range using Bot Sess
 # Prequisites:
 In order to execute the script following needs to be setup:
 1. Install node js
-2. Enable API scope for the bot
+2. Install the node modules by running "npm install"
+3. Enable API scope for the bot
 
 # Steps to enable API scope
 1. From the bot builder, navigate to API Extensions
