@@ -1,7 +1,13 @@
 {
-  "fromDate": "2019-12-30T00:00:00.000",
-  "toDate": "2020-01-06T00:00:00.000",
-  "origin": "https://bots.kore.ai",
-  "streamId": "<Add bot stream id starting with st- from Settings -> Config Settings -> Bot ID>",
-  "jwt":"<generate the jwt for the API scope app and add here. Instructions in Readme>"
+    "fromDate": "2020-06-16T10:00:00.000",
+    "toDate": "2020-06-17T10:00:00.000",
+    "origin": "https://bots.kore.ai",
+    "streamId": "<Add bot stream id starting with st- from Settings -> Config Settings -> Bot ID>",
+    "jwt": "<generate the jwt for the API scope app and add here. Instructions in Readme>",
+    "user": "<user gmail id>",
+    "googleClientId": "<gmail app client id>",
+    "googleClientSecret": "<gmail app client secret>",
+    "refreshtoken": "<gmail app refresh token>",
+    "googleReDirectURL": "<gmail app redirect url>",
+    "mailList": ["<array of email ids to be sent to users>"]
 }
