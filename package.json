@@ -19,7 +19,7 @@
     "highland": "^2.13.5",
     "into-stream": "^5.1.1",
     "jsonexport": "^2.0.11",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment-timezone": "^0.5.14",
     "nodemailer": "^6.4.6",
     "objects-to-csv": "^1.3.6",
