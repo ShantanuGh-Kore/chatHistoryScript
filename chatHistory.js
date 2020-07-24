@@ -5,6 +5,7 @@ var timezone = require("moment-timezone");
 var Promise = require('bluebird').config({ warnings: { wForgottenReturn: false } });
 var config = require("./config");
 var streamId = config.streamId;
+var hostUrl = config.origin;
 var jsonexport = require('jsonexport');
 var results = [];
 var messageDate;
@@ -38,7 +39,7 @@ function getKoraLogs(offset, streamId) {
     console.log("Retrieving records with offset " + offset + "...\n");
     var options1 = {
         method: 'POST',
-        url: 'https://bots.kore.ai/api/public/stream/' + streamId + '/getMessages',
+        url: hostUrl+'/api/public/stream/' + streamId + '/getMessages',
         body: {
             dateFrom: fromDate,
             dateTo: toDate,
