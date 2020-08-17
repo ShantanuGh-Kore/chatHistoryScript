@@ -9,3 +9,6 @@ The steps to generate the jwt token can be referred here: https://developer.kore
 
 The script also fetches and writes the custom meta tags available as part of the user profile. chatHistory.js file needs to be updated with the required custom metatags as per the use case.
 
+#Usage
+
+Execute the chatHistory.js file with the command node chatHistory.js from command line. The output file will be stored in the same directory as the script.
