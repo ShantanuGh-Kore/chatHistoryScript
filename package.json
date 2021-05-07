@@ -27,7 +27,8 @@
     "request-promise": "^4.2.2",
     "stream-array": "^1.1.2",
     "util": "^0.12.2",
-    "util.promisify": "^1.0.1"
+    "util.promisify": "^1.0.1",
+    "json-bigint": ">=1.0.0"
   },
   "author": "shantanu.ghorai@kore.com",
   "license": "ISC"
