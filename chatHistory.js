@@ -39,7 +39,7 @@ function getKoraLogs(offset, streamId) {
     console.log("Retrieving records with offset " + offset + "...\n");
     var options1 = {
         method: 'POST',
-        url: hostUrl+'/api/public/stream/' + streamId + '/getMessages',
+        url: hostUrl+'/api/public/bot/' + streamId + '/getMessages',
         body: {
             dateFrom: fromDate,
             dateTo: toDate,
@@ -62,6 +62,7 @@ function getKoraLogs(offset, streamId) {
                     text = "";
                 }
                 var msg = text.replace(/(\r\n|\n|\r)/gm, " ");
+                var obj = {} //comment this if defining your own obj as below
                 //Custom meta tags added in the bot uncomment the below section if Custom meta tags needs to be extracted. The obj needs to be declared accordingly
                 /*var obj = {
                     "customerId" :"N/A",
