@@ -11,4 +11,6 @@ The script also fetches and writes the custom meta tags available as part of the
 
 #Usage
 
-Execute the chatHistory.js file with the command node chatHistory.js from command line. The output file will be stored in the same directory as the script.
+1. Update the config.json file with the bot specific configuration.
+
+2. Execute the chatHistory.js file with the command node chatHistory.js from command line. The output file will be stored in the same directory as the script.
